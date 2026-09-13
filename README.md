@@ -1,4 +1,6 @@
-# React + TypeScript + Vite
+# Z-LINK
+
+React + TypeScript + Vite application.
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
