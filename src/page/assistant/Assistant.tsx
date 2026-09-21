@@ -25,7 +25,7 @@ function MatchCard({ match }: { match: MatchResult }) {
         </div>
         {/* 匹配度进度条 */}
         <div className="mt-2 h-1.5 bg-gray-200 rounded-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full" style={{ width: `${pct}%` }} />
+          <div className="h-full bg-linear-to-r from-blue-400 to-blue-600 rounded-full" style={{ width: `${pct}%` }} />
         </div>
         <p className="text-xs text-gray-500 mt-2">主营：{match.company.product}</p>
         <p className="text-xs text-gray-700 mt-1 line-clamp-2">{match.company.describe}</p>
@@ -44,9 +44,9 @@ function MatchCard({ match }: { match: MatchResult }) {
 /** 头像 */
 function Avatar({ role }: { role: "user" | "assistant" }) {
   return role === "user" ? (
-    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold shrink-0">我</div>
+    <div className="w-8 h-8 rounded-full bg-linear-to-r from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold shrink-0">我</div>
   ) : (
-    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-sm shrink-0">AI</div>
+    <div className="w-8 h-8 rounded-full bg-linear-to-r from-emerald-500 to-teal-600 flex items-center justify-center text-white text-sm shrink-0">AI</div>
   );
 }
 
@@ -97,7 +97,7 @@ export default function CompanyMatcher() {
       <Header />
       <div className="flex flex-col h-175 w-full max-w-3xl mx-auto border rounded-2xl shadow-lg bg-white overflow-hidden mt-30">
         {/* 头部 */}
-        <div className="px-5 py-3.5 border-b bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center justify-between">
+        <div className="px-5 py-3.5 border-b bg-linear-to-r from-blue-600 to-indigo-600 flex items-center justify-between">
           <div>
             <h2 className="font-bold text-white">🏢 AI 企业匹配助手</h2>
             <p className="text-xs text-blue-100 mt-0.5">语义检索 + 本地大模型 · {modelName || "Mistral-Nemo"}</p>
@@ -177,7 +177,7 @@ export default function CompanyMatcher() {
             }}
             onKeyDown={handleKeyDown}
             rows={1}
-            placeholder="描述你的需求，Enter 发送，Shift+Enter 换行..."
+            placeholder="描述你的需求，Enter 发送,Shift+Enter 换行..."
             className="flex-1 px-4 py-2.5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm bg-gray-50 resize-none"
           />
           {isGenerating ? (
