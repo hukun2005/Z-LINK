@@ -1,6 +1,5 @@
-import {post} from "../utils/https/request"
+import { get } from "../utils/https/request"
 
-
-export function getSuppliers(data: any){
-    return post("/suppliers", data)
+export function getSuppliers(params?: any) {
+  return get("/suppliers", params)
 }
