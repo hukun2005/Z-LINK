@@ -28,7 +28,7 @@ export function useCompanyAI() {
         setModelName(data.model);
         setStatus('ready');
       })
-      .catch((e) => {
+      .catch(() => {
         if (cancelled) return;
         setStatus('error');
         setError('无法连接后端服务，请确认 FastAPI 已启动（默认 http://localhost:8000）');
