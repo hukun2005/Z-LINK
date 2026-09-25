@@ -177,7 +177,7 @@ export default function CompanyMatcher() {
             }}
             onKeyDown={handleKeyDown}
             rows={1}
-            placeholder="描述你的需求，Enter 发送,Shift+Enter 换行..."
+            placeholder="描述你的需求,Enter 发送,Shift+Enter 换行..."
             className="flex-1 px-4 py-2.5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm bg-gray-50 resize-none"
           />
           {isGenerating ? (
