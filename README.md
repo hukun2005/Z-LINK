@@ -37,6 +37,28 @@ See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rule
 
  Z-LINK 是一个面向企业信息发现与供需匹配的 React Web 应用。用户可以浏览企业信息、发布企业资料，并通过浏览器内运行的 AI 助手，根据自然语言需求获得企业匹配结果。
 
+ ## 项目截图
+
+ ### 首页
+
+ ![Z-LINK 首页](src/assets/1.png)
+
+ ### AI 企业匹配助手
+
+ ![AI 企业匹配助手](src/assets/2.png)
+
+ ### 发布采购需求
+
+ ![发布采购需求](src/assets/3.png)
+
+ ### 供应商列表
+
+ ![供应商列表](src/assets/4.png)
+
+ ### 消息推送中心
+
+ ![消息推送中心](src/assets/5.png)
+
  ## 功能
 
  - 用户登录、注册与受保护路由
