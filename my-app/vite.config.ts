@@ -1,6 +1,8 @@
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
+import Components from 'unplugin-vue-components/vite'
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import fs from 'node:fs'
 import path from 'node:path'
 
@@ -33,6 +35,13 @@ export default defineConfig({
   plugins: [
     vue(),
     tailwindcss(),
+    Components({
+      resolvers: [
+        AntDesignVueResolver({
+          importStyle: false,
+        }),
+      ],
+    }),
     {
       name: 'rewrite-local-model-path',
       configureServer(server) {
@@ -58,7 +67,22 @@ export default defineConfig({
     },
    open: true,
   },
-  optimizeDeps: {
-    exclude: ['@mlc-ai/web-llm', '@huggingface/transformers'],
-  }
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          if (!id.includes('node_modules')) return
+          if (id.includes('ant-design-vue') || id.includes('@ant-design/icons-vue')) return 'antd-vendor'
+          if (id.includes('three')) return 'three-vendor'
+          if (id.includes('axios')) return 'axios-vendor'
+          if (
+            id.includes('vue-router') ||
+            id.includes('pinia') ||
+            id.includes('/node_modules/vue/') ||
+            id.includes('/node_modules/@vue/')
+          ) return 'vue-vendor'
+        },
+      },
+    },
+  },
 })
