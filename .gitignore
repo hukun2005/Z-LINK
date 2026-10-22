@@ -1,0 +1,37 @@
+# ===== Python / backend =====
+backend/.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 运行时数据库（本地 SQLite 数据，不入库）
+*.db
+*.sqlite
+*.sqlite3
+
+# 密钥
+.env
+*.env
+!.env.example
+backend/.env
+
+# ===== Node / 前端 =====
+my-app/node_modules/
+my-app/dist/
+my-app/dist-ssr/
+
+# 浏览器端大模型权重（数 GB，不入库）
+my-app/public/models/
+**/models/*.wasm
+**/models/*.bin
+
+# ===== 编辑器 / 系统 =====
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# ===== 日志 =====
+*.log
+logs/
